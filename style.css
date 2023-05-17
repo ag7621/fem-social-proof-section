@@ -8,8 +8,17 @@
     --lt-gray-magenta: hsl(300, 24%, 96%);
     --white: hsl(0, 0%, 100%);
 
+    /* components */
+    --clr-headline-primary: var(--very-dk-magenta);
+    --clr-headline-text: var(--dk-gray-magenta);
+
+    --clr-ratings-bg: var(--lt-gray-magenta);
+
     /* font size */
     --fs-400: 0.938rem;
+    --fs-450: 1rem;
+    --fs-500: 1.125rem;
+    --fs-800: 3.5rem;
 
     /* font weight */
     --fw-regular: 400;
@@ -79,4 +88,87 @@ body {
     font-size: var(--fs-400);
     font-weight: var(--fw-regular);
     font-family: 'League Spartan', sans-serif;
+
+    display: grid;
+    place-content: center;
+}
+
+.flex {
+    display: flex;
+}
+
+.container {
+    display: grid;
+    max-width: 69.5rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        "headline ratings"
+        "reviews reviews";
+    column-gap: 2rem;
+    row-gap: 3.75rem;
+}
+
+.headline {
+    background-color: slateblue;
+    padding-right: 7rem;
+    grid-area: headline;
+}
+
+.headline__title {
+    font-size: var(--fs-800);
+    line-height: 0.85;
+    letter-spacing: -3px;
+}
+
+.headline__text {
+    font-size: var(--fs-500);
+    margin: 1.625rem 0 0.5rem;
+    line-height: 1.45;
+}
+
+.ratings {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background-color: seagreen;
+    grid-area: ratings;
+}
+
+.ratings div:first-child {
+    align-self: flex-start;
+}
+
+.ratings div:last-child {
+    align-self: flex-end;
+}
+
+.ratings__card {
+    display: flex;
+    align-items: center;
+    background-color: var(--clr-ratings-bg);
+    border-radius: 5px;
+    width: 27.75rem;
+    padding: 1rem 2rem;
+    gap: 2rem;
+    font-size: var(--fs-450);
+    font-weight: var(--fw-bold);
+    letter-spacing: 0.5px;
+}
+
+.stars {
+    display: flex;
+    height: 16px;
+    gap: 0.5rem;
+}
+
+/* .ratings__card span {
+    margin-bottom: -2px;
+} */
+
+.reviews {
+    background-color: palevioletred;
+    grid-area: reviews;
 }
