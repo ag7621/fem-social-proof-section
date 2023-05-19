@@ -169,6 +169,39 @@ body {
 } */
 
 .reviews {
+    display: flex;
+    justify-content: space-between;
     background-color: palevioletred;
     grid-area: reviews;
+    /* gap: 1rem; */
+}
+
+.reviews__card {
+    background-color: darkslateblue;
+    border-radius: 10px;
+    max-width: 21.938rem;
+    padding: 2.5rem 2rem;
+    font-size: var(--fs-450);
+    font-weight: var(--fw-medium);
+}
+
+.user__info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.625rem;
+    line-height: 1.25;
+}
+
+.user__img {
+    border-radius: 50%;
+    height: 2.5rem;
+    margin-right: 1.5rem;
+}
+
+.user__info h2 {
+    font-size: var(--fs-450);
+}
+
+blockquote {
+    line-height: 1.4;
 }
