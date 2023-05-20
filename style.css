@@ -90,29 +90,35 @@ body {
     font-family: 'League Spartan', sans-serif;
 
     display: grid;
-    place-content: center;
-}
-
-.flex {
-    display: flex;
+    /* place-content: center; */
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    row-gap: 4.313rem;
     max-width: 69.5rem;
-    grid-template-columns: 1fr 1fr;
+    /* grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     grid-template-areas:
         "headline ratings"
-        "reviews reviews";
+        "reviews reviews"; */
+    /* column-gap: 2rem; */
+
+}
+
+.hero {
+    display: flex;
     column-gap: 2rem;
-    row-gap: 3.75rem;
 }
 
 .headline {
     background-color: slateblue;
+    width: 50%;
     padding-right: 7rem;
-    grid-area: headline;
+    /* grid-area: headline; */
 }
 
 .headline__title {
@@ -123,16 +129,19 @@ body {
 
 .headline__text {
     font-size: var(--fs-500);
-    margin: 1.625rem 0 0.5rem;
+    /* margin: 1.625rem 0 0.5rem; */
+    margin-top: 1.625rem;
     line-height: 1.45;
 }
 
 .ratings {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     gap: 1rem;
+    width: 50%;
+    padding-top: 1.625rem;
     background-color: seagreen;
     grid-area: ratings;
 }
@@ -171,16 +180,25 @@ body {
 .reviews {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: palevioletred;
+    height: 16.625rem;
     grid-area: reviews;
-    /* gap: 1rem; */
+}
+
+.reviews figure:first-child {
+    align-self: flex-start;
+}
+
+.reviews figure:last-child {
+    align-self: flex-end;
 }
 
 .reviews__card {
     background-color: darkslateblue;
     border-radius: 10px;
     max-width: 21.938rem;
-    padding: 2.5rem 2rem;
+    padding: 2.5rem 2rem 2.375rem;
     font-size: var(--fs-450);
     font-weight: var(--fw-medium);
 }
@@ -204,4 +222,15 @@ body {
 
 blockquote {
     line-height: 1.4;
+}
+
+@media (max-width: 1175px) {
+
+    .hero {
+        flex-direction: column;
+    }
+
+    .reviews {
+        flex-direction: column;
+    }
 }
