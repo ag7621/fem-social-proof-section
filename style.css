@@ -112,19 +112,23 @@ body {
 .hero {
     display: flex;
     column-gap: 2rem;
+
+    flex-direction: column;
 }
 
 .headline {
     background-color: slateblue;
-    width: 50%;
+    /* width: 50%; */
     padding-right: 7rem;
     /* grid-area: headline; */
 }
 
 .headline__title {
-    font-size: var(--fs-800);
+    /* font-size: var(--fs-800); */
     line-height: 0.85;
     letter-spacing: -3px;
+
+    font-size: clamp(2.50rem, calc(2.03rem + 2.00vw), 3.50rem);
 }
 
 .headline__text {
@@ -140,19 +144,19 @@ body {
     /* justify-content: center; */
     align-items: center;
     gap: 1rem;
-    width: 50%;
+    /* width: 50%; */
     padding-top: 1.625rem;
     background-color: seagreen;
     grid-area: ratings;
 }
 
-.ratings div:first-child {
+/* .ratings div:first-child {
     align-self: flex-start;
 }
 
 .ratings div:last-child {
     align-self: flex-end;
-}
+} */
 
 .ratings__card {
     display: flex;
@@ -184,15 +188,17 @@ body {
     background-color: palevioletred;
     height: 16.625rem;
     grid-area: reviews;
+
+    flex-direction: column;
 }
 
-.reviews figure:first-child {
+/* .reviews figure:first-child {
     align-self: flex-start;
 }
 
 .reviews figure:last-child {
     align-self: flex-end;
-}
+} */
 
 .reviews__card {
     background-color: darkslateblue;
@@ -224,7 +230,7 @@ blockquote {
     line-height: 1.4;
 }
 
-@media (max-width: 1175px) {
+/* @media (max-width: 1175px) {
 
     .hero {
         flex-direction: column;
@@ -232,5 +238,41 @@ blockquote {
 
     .reviews {
         flex-direction: column;
+    }
+} */
+
+@media (min-width: 925px) {
+
+    .hero {
+        flex-direction: row;
+    }
+
+    .headline {
+        width: 50%;
+    }
+
+    .ratings {
+        width: 50%;
+    }
+
+    .ratings div:first-child {
+        align-self: flex-start;
+    }
+
+    .ratings div:last-child {
+        align-self: flex-end;
+    }
+
+    .reviews {
+        flex-direction: row;
+        gap: 0.5rem;
+    }
+
+    .reviews figure:first-child {
+        align-self: flex-start;
+    }
+
+    .reviews figure:last-child {
+        align-self: flex-end;
     }
 }
