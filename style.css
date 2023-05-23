@@ -14,6 +14,10 @@
 
     --clr-ratings-bg: var(--lt-gray-magenta);
 
+    --clr-reviews-bg: var(--very-dk-magenta);
+    --clr-reviews-primary: var(--white);
+    --clr-reviews-subtitle: var(--soft-pink);
+
     /* font size */
     --fs-400: 0.938rem;
     --fs-450: 1rem;
@@ -85,7 +89,11 @@ h6 {
 /* styling */
 
 body {
-    background-color: teal;
+    /* background-color: teal; */
+    background-image: url(images/bg-pattern-top-mobile.svg), url(images/bg-pattern-bottom-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: left top, right bottom;
+    color: var(--clr-headline-primary);
     font-size: var(--fs-400);
     font-weight: var(--fw-regular);
     font-family: 'League Spartan', sans-serif;
@@ -120,7 +128,7 @@ body {
 }
 
 .headline {
-    background-color: slateblue;
+    /* background-color: slateblue; */
     /* width: 50%; */
     /* padding-right: 7rem; */
     /* grid-area: headline; */
@@ -138,7 +146,9 @@ body {
 }
 
 .headline__text {
+    color: var(--clr-headline-text);
     font-size: var(--fs-500);
+    font-weight: var(--fw-medium);
     /* margin: 1.625rem 0 0.5rem; */
     margin-top: 1.125rem;
     line-height: 1.45;
@@ -152,7 +162,7 @@ body {
     gap: 1rem;
     /* width: 50%; */
     /* padding: 0 1.5rem; */
-    background-color: seagreen;
+    /* background-color: seagreen; */
     grid-area: ratings;
 }
 
@@ -194,8 +204,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: palevioletred;
+    /* background-color: palevioletred; */
     /* height: 16.625rem; */
+    color: var(--clr-reviews-primary);
     grid-area: reviews;
 
     flex-direction: column;
@@ -212,7 +223,7 @@ body {
 } */
 
 .reviews__card {
-    background-color: darkslateblue;
+    background-color: var(--clr-reviews-bg);
     border-radius: 10px;
     /* max-width: 21.938rem; */
     padding: 2.75rem 2.5rem 2rem 2rem;
@@ -237,6 +248,10 @@ body {
     font-size: var(--fs-450);
 }
 
+figcaption {
+    color: var(--clr-reviews-subtitle);
+}
+
 blockquote {
     line-height: 1.4;
 }
@@ -253,6 +268,12 @@ blockquote {
 } */
 
 @media (min-width: 925px) {
+
+    body {
+        background-image: url(images/bg-pattern-top-desktop.svg), url(images/bg-pattern-bottom-desktop.svg);
+        background-repeat: no-repeat;
+        background-position: left top, right bottom;
+    }
 
     .container {
         row-gap: 4.313rem;
