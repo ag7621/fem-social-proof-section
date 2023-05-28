@@ -197,7 +197,7 @@ body {
     font-size: var(--fs-450);
 }
 
-figcaption {
+.user__subtitle {
     color: var(--clr-reviews-subtitle);
 }
 
